@@ -48,7 +48,7 @@ const contactInfo = [
   {
     Icon: Mail,
     title: "Email Us",
-    details: ["info@midatlanticmedicalbilling.com", "billing@midatlanticmedicalbilling.com"],
+    details: ["info@midatmd.com", "billing@midatmd.com"],
     sub: "We reply within 24 hours",
   },
   {

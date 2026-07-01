@@ -5,7 +5,8 @@ import {
   HeartPulse, Bone, Brain, Microscope, Stethoscope, ActivitySquare,
   ClipboardList, RefreshCw, Smile, Building2, Search, CheckCircle2,
   TrendingUp, Award, DollarSign, ShieldCheck, Users, Clock, Flame,
-  FileText, ArrowRight, Shield, Award as AwardIcon, Check, Baby, BarChart3
+  FileText, ArrowRight, Shield, Award as AwardIcon, Check, Baby, BarChart3,
+  Wind, Sparkles, Eye, Footprints
 } from "lucide-react";
 
 /* ─── HOOKS ─────────────────────────────────────────────── */
@@ -63,10 +64,43 @@ const allSpecialties = [
   { name: "Pediatrics Billing", Icon: Baby, desc: "Well-child visits, immunizations, and pediatric-specific E&M code billing.", href: "/specialties/pediatrics" },
   { name: "Dental Billing", Icon: Smile, desc: "Dental procedure coding (CDT), dental claim forms, and insurance billing.", href: "/specialties/dental" },
   { name: "ASC Billing", Icon: Building2, desc: "Ambulatory surgery center facility fee coding and APC payment billing.", href: "/specialties/asc" },
+  { name: "Podiatry Billing", Icon: Footprints, desc: "Specialized podiatric coding for foot/ankle surgeries, orthotics, and routine foot care.", href: "/specialties/podiatry" },
+  { name: "Pulmonology Billing", Icon: Wind, desc: "Lungs, sleep apnea studies, bronchoscopy, and pulmonary function test billing.", href: "/contact-us?specialty=Pulmonology" },
+  { name: "Psychiatry Billing", Icon: Brain, desc: "Psychiatric diagnostic evaluations, psychotherapy sessions, and pharmacologic management.", href: "/contact-us?specialty=Psychiatry" },
+  { name: "Urgent Care Billing", Icon: Flame, desc: "High-volume claims, E&M coding, and rapid collections for urgent care clinics.", href: "/contact-us?specialty=Urgent%20Care" },
+  { name: "Sleep Medicine Billing", Icon: Clock, desc: "Polysomnography coding, home sleep test billing, and DME reimbursement.", href: "/contact-us?specialty=Sleep%20Medicine" },
+  { name: "Primary Care Billing", Icon: Users, desc: "Preventive medicine, annual wellness visits, and chronic care management billing.", href: "/contact-us?specialty=Primary%20Care" },
+  { name: "Urology Billing", Icon: ClipboardList, desc: "Cystoscopy, prostate procedure billing, and urological surgery coding.", href: "/contact-us?specialty=Urology" },
+  { name: "Endocrinology Billing", Icon: ActivitySquare, desc: "Continuous glucose monitoring, thyroid biopsy, and diabetes management billing.", href: "/contact-us?specialty=Endocrinology" },
+  { name: "Hand Surgery Billing", Icon: Bone, desc: "Tendon repair, carpal tunnel release, and complex hand reconstructive coding.", href: "/contact-us?specialty=Hand%20Surgery" },
+  { name: "Rheumatology Billing", Icon: Stethoscope, desc: "Infusion services, joint injections, and autoimmune disorder billing compliance.", href: "/contact-us?specialty=Rheumatology" },
+  { name: "Dermatology Billing", Icon: Sparkles, desc: "Biopsies, mohs micrographic surgery, skin tag removals, and cosmetic billing.", href: "/contact-us?specialty=Dermatology" },
+  { name: "Otolaryngology Billing", Icon: Stethoscope, desc: "ENT surgeries, audiology tests, tonsillectomy, and sinus procedure coding.", href: "/contact-us?specialty=Otolaryngology" },
+  { name: "Ophthalmology Billing", Icon: Eye, desc: "Cataract surgery, intravitreal injections, and comprehensive eye exam billing.", href: "/contact-us?specialty=Ophthalmology" },
+  { name: "Allergy Immunology Billing", Icon: Shield, desc: "Allergen immunotherapy, patch testing, and spirometry billing services.", href: "/contact-us?specialty=Allergy%20Immunology" },
+  { name: "Speech Therapy Billing", Icon: ClipboardList, desc: "Evaluation and therapeutic interventions for speech, language, and cognitive disorders.", href: "/contact-us?specialty=Speech%20Therapy" },
+  { name: "General Surgery Billing", Icon: Microscope, desc: "Hernia repair, appendectomy, gallbladder removal, and surgical bundling compliance.", href: "/contact-us?specialty=General%20Surgery" },
+  { name: "Physical Therapy Billing", Icon: ActivitySquare, desc: "Therapeutic exercises, manual therapy, and timed modality billing compliance.", href: "/contact-us?specialty=Physical%20Therapy" },
+  { name: "Vascular Surgery Billing", Icon: HeartPulse, desc: "Endovascular procedures, angioplasty, vein ablation, and diagnostic studies.", href: "/contact-us?specialty=Vascular%20Surgery" },
+  { name: "Physical Medicine Billing", Icon: ActivitySquare, desc: "Rehabilitative care, EMG/NCS studies, and pain management coding.", href: "/contact-us?specialty=Physical%20Medicine" },
+  { name: "Internal Medicine Billing", Icon: Stethoscope, desc: "Complex multi-system disease management, E&M coding, and preventive care.", href: "/contact-us?specialty=Internal%20Medicine" },
+  { name: "Infectious Disease Billing", Icon: Shield, desc: "Outpatient parenteral antimicrobial therapy (OPAT) and complex consultations.", href: "/contact-us?specialty=Infectious%20Disease" },
+  { name: "Behavioral Health Billing", Icon: Brain, desc: "Mental health counseling, substance abuse treatment, and intensive outpatient billing.", href: "/contact-us?specialty=Behavioral%20Health" },
+  { name: "Rehabilitative Medicine Billing", Icon: ActivitySquare, desc: "PT/OT billing, neurological rehabilitation, and custom orthotic device coding.", href: "/contact-us?specialty=Rehabilitative%20Medicine" },
+  { name: "Neurosurgery Billing", Icon: Brain, desc: "Craniotomy, spinal fusion, and complex neuro-interventional coding.", href: "/contact-us?specialty=Neurosurgery" },
+  { name: "Medical Nutrition Billing", Icon: Stethoscope, desc: "Medical nutrition therapy (MNT), diabetes education, and nutritional counseling.", href: "/contact-us?specialty=Medical%20Nutrition" },
+  { name: "Birth Center Billing", Icon: Baby, desc: "Global maternity packages, facility fee billing, and newborn care services.", href: "/contact-us?specialty=Birth%20Center" },
+  { name: "Family Practice Billing", Icon: Users, desc: "Comprehensive family care, chronic care coordination, and preventive billing.", href: "/contact-us?specialty=Family%20Practice" },
+  { name: "Radiology Billing", Icon: Microscope, desc: "MRI, CT scans, X-rays, ultrasound, and professional/technical component billing.", href: "/contact-us?specialty=Radiology" },
+  { name: "Anesthesia Billing", Icon: Clock, desc: "Base units, time units, physical status modifiers, and CRNA billing compliance.", href: "/contact-us?specialty=Anesthesia" },
+  { name: "Chiropractic Billing", Icon: Bone, desc: "Spinal manipulation coding, modality tracking, and strict medical necessity documentation.", href: "/contact-us?specialty=Chiropractic" },
+  { name: "DME Billing", Icon: ClipboardList, desc: "Durable Medical Equipment billing, supply codes, and supplier standards compliance.", href: "/contact-us?specialty=DME" },
+  { name: "Occupational Therapy Billing", Icon: ActivitySquare, desc: "Functional cognitive training, custom orthotic fitting, and timed modality billing.", href: "/contact-us?specialty=Occupational%20Therapy" },
+  { name: "Pathology Billing", Icon: Microscope, desc: "Anatomical and clinical pathology coding, laboratory panels, and specimen billing.", href: "/contact-us?specialty=Pathology" }
 ];
 
 const stats = [
-  { end: 40, suffix: "+", label: "Specialties Covered" },
+  { end: 44, suffix: "+", label: "Specialties Covered" },
   { end: 98, suffix: "%", label: "Clean Claim Rate" },
   { end: 1100, suffix: "+", label: "Certified Billing Experts" },
   { end: 20, suffix: "%", label: "Avg. Revenue Increase" },
